@@ -1,0 +1,12 @@
+postgres_data/
+
+docs/
+.idea/
+logs/
+
+### Environment ###
+.env
+
+.gitignore
+HELP.md
+README.md

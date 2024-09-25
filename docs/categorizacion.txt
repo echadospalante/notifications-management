@@ -1,0 +1,52 @@
+Alimentación
+Agricultura
+Ganadería
+Salud y bienestar
+Deporte
+Belleza
+Moda y accesorios
+Textiles
+Construccion
+Tecnología
+Muebles y Decoración
+Entretenimiento
+Servicios
+
+Sector Primario
+
+Agricultura y Silvicultura
+Ganadería y Pesca
+Minería y Extracción
+
+
+Sector Secundario (Industria y Manufactura)
+
+Alimentación y Bebidas
+Textil y Moda
+Construcción y Materiales
+Tecnología y Electrónica
+Muebles y Decoración
+Química y Farmacéutica
+Automoción y Transporte
+Energía y Utilities
+
+
+Sector Terciario (Servicios)
+
+Comercio y Retail
+Servicios Financieros y Seguros
+Salud y Bienestar
+Educación y Formación
+Turismo y Hostelería
+Entretenimiento y Medios
+Servicios Profesionales
+Transporte y Logística
+Tecnologías de la Información
+Inmobiliaria
+
+
+Sector Cuaternario (Conocimiento e Innovación)
+
+Investigación y Desarrollo
+Consultoría Especializada
+Tecnologías Avanzadas

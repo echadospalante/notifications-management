@@ -1,0 +1,13 @@
+server:
+  port: 8082
+
+spring:
+  main:
+    banner-mode: console
+  banner:
+    location: classpath:banner/banner.txt
+  application:
+    name: epl-notifications-manager
+  profiles:
+    active:
+      - dev
