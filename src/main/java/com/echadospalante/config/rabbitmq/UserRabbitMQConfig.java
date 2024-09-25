@@ -79,14 +79,14 @@ public class UserRabbitMQConfig {
                         userUnverifieQueue()
                 ).map(queue -> {
                     int lastDotIndex = queue.getName().lastIndexOf(".");
-                    String name = queue.getName().concat(".rk");
+                    String rk = queue.getName().concat(".rk");
                     if (lastDotIndex != -1) {
-                        name = queue.getName().substring(0, lastDotIndex).concat(".rk");
+                        rk = queue.getName().substring(0, lastDotIndex).concat(".rk");
                     }
-                    System.out.println(name);
+                    System.out.println(rk);
                     return BindingBuilder.bind(queue)
                             .to(userExchange())
-                            .with(name);
+                            .with(rk);
                 })
                 .collect(Collectors.toList());
     }
