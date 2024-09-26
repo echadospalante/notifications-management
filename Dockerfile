@@ -16,6 +16,6 @@ ENV SPRING_PROFILES_ACTIVE='pdn'
 
 COPY --from=builder /app/build/libs/epl-notifications-manager-1.0.0.jar ./epl-notifications-manager-1.0.0.jar
 
-EXPOSE 8080
+EXPOSE 3020
 
 CMD ["java", "-jar", "epl-notifications-manager-1.0.0.jar"]
