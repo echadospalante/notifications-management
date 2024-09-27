@@ -15,8 +15,8 @@
     "javascript_origins": [
       "https://echadospalante.com",
       "http://localhost:5173",
-      "http://localhost:8888",
-      "http://localhost"
+      "http://localhost",
+      "http://localhost:8888"
     ]
   }
 }
