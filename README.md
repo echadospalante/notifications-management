@@ -1,1 +1,1 @@
-# base-project-java
+# notifications-management
