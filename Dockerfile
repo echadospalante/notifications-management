@@ -14,8 +14,8 @@ WORKDIR /app
 
 ENV SPRING_PROFILES_ACTIVE='pdn'
 
-COPY --from=builder /app/build/libs/epl-notifications-manager-1.0.5.jar ./epl-notifications-manager-1.0.5.jar
+COPY --from=builder /app/build/libs/epl-notifications-manager-1.0.0.jar ./epl-notifications-manager-1.0.0.jar
 
-EXPOSE 3020
+EXPOSE 3060
 
-CMD ["java", "-jar", "epl-notifications-manager-1.0.5.jar"]
+CMD ["java", "-jar", "epl-notifications-manager-1.0.0.jar"]
