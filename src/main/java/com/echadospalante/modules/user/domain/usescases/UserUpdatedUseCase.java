@@ -1,6 +1,6 @@
 package com.echadospalante.modules.user.domain.usescases;
 
-import com.echadospalante.modules.user.domain.core.entities.*;
+import com.echadospalante.modules.user.domain.core.entities.user.UserUpdatedMessage;
 import com.echadospalante.modules.user.domain.core.gateway.EmailSender;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;

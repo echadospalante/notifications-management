@@ -1,4 +1,4 @@
-package com.echadospalante.modules.user.domain.core.entities.commands;
+package com.echadospalante.modules.user.domain.core.commands.user;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder(toBuilder = true)
-public class SendUserDisabledMessageCommand {
+public class SendUserVerifiedMessageCommand {
 
     private String nombre;
     private String cedula;

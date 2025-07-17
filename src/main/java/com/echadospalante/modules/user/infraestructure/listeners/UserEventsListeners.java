@@ -1,7 +1,7 @@
 package com.echadospalante.modules.user.infraestructure.listeners;
 
 import com.echadospalante.config.google.GsonInstance;
-import com.echadospalante.modules.user.domain.core.entities.*;
+import com.echadospalante.modules.user.domain.core.entities.user.*;
 import com.echadospalante.modules.user.domain.usescases.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class RabbitMQUserListeners {
+public class UserEventsListeners {
 
     private final GsonInstance gsonInstance;
 
@@ -29,17 +29,17 @@ public class RabbitMQUserListeners {
         this.userCreatedUseCase.sendUserCreatedMessage(message);
     }
 
+    @RabbitListener(queues = "users.registered.queue")
+    public void userRegisteredListener(String msgString) {
+        UserRegisteredMessage message = gsonInstance.gson().fromJson(msgString, UserRegisteredMessage.class);
+        this.userRegisteredUseCase.sendUserRegisteredMessage(message);
+    }
+
     @RabbitListener(queues = "users.logged.queue")
     public void userLoggedListener(String msgString) {
         System.out.println(msgString);
         UserLoggedInMessage message = gsonInstance.gson().fromJson(msgString, UserLoggedInMessage.class);
         this.userLoggedInUseCase.sendUserLoggedInMessage(message);
-    }
-
-    @RabbitListener(queues = "users.deleted.queue")
-    public void userDeletedListener(String msgString) {
-        UserDeletedMessage message = gsonInstance.gson().fromJson(msgString, UserDeletedMessage.class);
-        this.userDeletedUseCase.sendUserDeletedMessage(message);
     }
 
     @RabbitListener(queues = "users.disabled.queue")
@@ -52,12 +52,6 @@ public class RabbitMQUserListeners {
     public void userEnabledListener(String msgString) {
         UserEnabledMessage message = gsonInstance.gson().fromJson(msgString, UserEnabledMessage.class);
         this.userEnabledUseCase.sendUserEnabledMessage(message);
-    }
-
-    @RabbitListener(queues = "users.registered.queue")
-    public void userRegisteredListener(String msgString) {
-        UserRegisteredMessage message = gsonInstance.gson().fromJson(msgString, UserRegisteredMessage.class);
-        this.userRegisteredUseCase.sendUserRegisteredMessage(message);
     }
 
     @RabbitListener(queues = "users.updated.queue")
@@ -76,6 +70,18 @@ public class RabbitMQUserListeners {
     public void userUnverifiedListener(String msgString) {
         UserUnverifiedMessage message = gsonInstance.gson().fromJson(msgString, UserUnverifiedMessage.class);
         this.userUnverifiedUseCase.sendUserUnverifiedMessage(message);
+    }
+
+    @RabbitListener(queues = "users.inactivated.queue")
+    public void userInactivatedListener(String msgString) {
+        UserDeletedMessage message = gsonInstance.gson().fromJson(msgString, UserDeletedMessage.class);
+        this.userDeletedUseCase.sendUserDeletedMessage(message);
+    }
+
+    @RabbitListener(queues = "users.reactivated.queue")
+    public void userReactivatedListener(String msgString) {
+        UserDeletedMessage message = gsonInstance.gson().fromJson(msgString, UserDeletedMessage.class);
+        this.userDeletedUseCase.sendUserDeletedMessage(message);
     }
 
 }
