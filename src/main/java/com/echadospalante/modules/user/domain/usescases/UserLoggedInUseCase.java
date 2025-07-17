@@ -21,7 +21,7 @@ public class UserLoggedInUseCase {
 
     public void sendUserLoggedInMessage(UserLoggedInMessage message) {
         try {
-            String subject = "Nuevo inicio de sesión en tu cuenta de EchadosPa'lante";
+            String subject = "Nuevo inicio de sesion en tu cuenta de EchadosPa'lante";
 
             Resource resource = new ClassPathResource("templates/user_logged_message.html");
             String htmlContent = StreamUtils.copyToString(resource.getInputStream(), StandardCharsets.UTF_8);

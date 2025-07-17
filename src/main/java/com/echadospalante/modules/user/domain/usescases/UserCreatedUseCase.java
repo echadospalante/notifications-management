@@ -21,7 +21,7 @@ public class UserCreatedUseCase {
 
     public void sendUserCreatedMessage(UserRegisteredMessage message) {
         try {
-            String subject = "Bienvenido a EchadosPa'lante, estamos felices de tenerte con nosotros!";
+            String subject = "Hola " + message.getFirstName() + ", te damos la bienvenida a EchadosPa'lante, estamos felices de tenerte con nosotros!";
 
             Resource resource = new ClassPathResource("templates/user_created_message.html");
             String htmlContent = StreamUtils.copyToString(resource.getInputStream(), StandardCharsets.UTF_8);

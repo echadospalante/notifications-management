@@ -1,5 +1,0 @@
-google:
-  calendar:
-    credentials-file: classpath:credentials.json
-    calendar-id: primary
-    timezone: America/Los_Angeles

@@ -37,8 +37,8 @@ public class UserEventsListeners {
 
     @RabbitListener(queues = "users.logged.queue")
     public void userLoggedListener(String msgString) {
-        System.out.println(msgString);
         UserLoggedInMessage message = gsonInstance.gson().fromJson(msgString, UserLoggedInMessage.class);
+        System.out.println("User logged in: " + message.getEmail());
         this.userLoggedInUseCase.sendUserLoggedInMessage(message);
     }
 
@@ -72,16 +72,16 @@ public class UserEventsListeners {
         this.userUnverifiedUseCase.sendUserUnverifiedMessage(message);
     }
 
-    @RabbitListener(queues = "users.inactivated.queue")
-    public void userInactivatedListener(String msgString) {
-        UserDeletedMessage message = gsonInstance.gson().fromJson(msgString, UserDeletedMessage.class);
-        this.userDeletedUseCase.sendUserDeletedMessage(message);
-    }
-
-    @RabbitListener(queues = "users.reactivated.queue")
-    public void userReactivatedListener(String msgString) {
-        UserDeletedMessage message = gsonInstance.gson().fromJson(msgString, UserDeletedMessage.class);
-        this.userDeletedUseCase.sendUserDeletedMessage(message);
-    }
+//    @RabbitListener(queues = "users.inactivated.queue")
+//    public void userInactivatedListener(String msgString) {
+//        UserDeletedMessage message = gsonInstance.gson().fromJson(msgString, UserDeletedMessage.class);
+//        this.userDeletedUseCase.sendUserDeletedMessage(message);
+//    }
+//
+//    @RabbitListener(queues = "users.reactivated.queue")
+//    public void userReactivatedListener(String msgString) {
+//        UserDeletedMessage message = gsonInstance.gson().fromJson(msgString, UserDeletedMessage.class);
+//        this.userDeletedUseCase.sendUserDeletedMessage(message);
+//    }
 
 }

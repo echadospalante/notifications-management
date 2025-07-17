@@ -38,7 +38,7 @@ public class EmailSenderImpl implements EmailSender {
             MimeMessage email = createEmail(to, user, subject, body);
             sendMessage(userId, email);
         } catch (MessagingException | jakarta.mail.MessagingException e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
     }
 
